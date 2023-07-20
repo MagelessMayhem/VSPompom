@@ -116,7 +116,7 @@
 	<haxelib name="newgrounds"/>
 	<haxelib name="faxe" if='switch'/>
 	<haxelib name="polymod"/>
-	<haxelib name="discord_rpc" if="windows"/>
+	<haxelib name="discord_rpc" if="desktop"/>
 	<haxelib name="linc_luajit"/>
 
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
@@ -171,5 +171,8 @@
 
 	<!-- <haxedef name="SKIP_TO_PLAYSTATE" if="debug" /> -->
 	<haxedef name="NG_LOGIN" if="newgrounds" />
+	<target id='haxe' tool='linker' if='linux'>
+		<lib name="/usr/lib64/libX11.so"/>
+	</target>
 	
 </project>
